@@ -1,0 +1,1 @@
+LEMBRETE: Não clonem este repositório dentro de um diretório na sua máquina que já é um repositório git. :)
