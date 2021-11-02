@@ -1,4 +1,4 @@
-const cabecalho = document.getElementById("header-container");
+/* const cabecalho = document.getElementById("header-container");
 cabecalho.style.backgroundColor = "rgb(0, 176, 105)";
 
 const divUrgente = document.getElementsByClassName("emergency-tasks")[0];
@@ -17,4 +17,10 @@ const naoUrgenteCabecalho = document.querySelectorAll(".no-emergency-tasks h3");
               naoUrgenteCabecalho[i].style.backgroundColor = "rgb(35, 37, 37)";
        }
 const rodape = document.getElementById("footer-container");
-rodape.style.backgroundColor = "rgb(0, 53, 51)";
+rodape.style.backgroundColor = "rgb(0, 53, 51)"; */
+
+// arquivo script.js
+
+console.log(document.getElementById('start').nextSibling) // nó
+
+console.log(document.getElementById('start').nextElementSibling) // <p>elemento</p>

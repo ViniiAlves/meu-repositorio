@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8">
@@ -34,4 +34,65 @@
     </footer>
     <script src="script.js"></script>
   </body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>  
+  <main id="paiDoPai">
+    <section id="pai">
+      <section id="primeiroFilho">primeiro filho</section>
+      <section id="elementoOndeVoceEsta">onde eu to
+        <section id="primeiroFilhoDoFilho">primeiro filho do filho</section>
+        <section id="segundoEUltimoFilhoDoFilho">segundo e ultimo filho do filho</section>
+      </section>
+      Atenção!
+      <section id="terceiroFilho">terceiro filho</section>
+      <section id="quartoEUltimoFilho">quarto e ultimo filho</section>
+    </section>
+  </main>
+  <script>
+    /* 1. Crie um irmão para 'elementoOndeVoceEsta' */
+    const pai = document.getElementById("pai");
+    const irmaoElementoOndeVoceEsta = document.createElement("section");
+    irmaoElementoOndeVoceEsta.id = "irmaoElementoOndeVoceEsta";
+    pai.appendChild(irmaoElementoOndeVoceEsta);
+    document.getElementById("irmaoElementoOndeVoceEsta").innerText = "Irmao do Elemento onde eu to";
+
+    /* 2. Crie um filho para `elementoOndeVoceEsta` */
+    const ondeEuTo = document.getElementById("elementoOndeVoceEsta");
+    const terceiroFilhoDoFilho = document.createElement("section");
+    terceiroFilhoDoFilho.id = "terceiroFilhoDoFilho";
+    ondeEuTo.appendChild(terceiroFilhoDoFilho);
+    document.getElementById("terceiroFilhoDoFilho").innerText = "Terceiro fiho de onde eu to";
+    
+    /* 3. Crie um filho para `primeiroFilhoDoFilho` */
+    const primeiroFilhoDoFilho = document.getElementById("primeiroFilhoDoFilho");
+    const primeiroFilhoDoFilhoDoFilho = document.createElement("section");
+    primeiroFilhoDoFilhoDoFilho.id = "primeiroFilhoDoFilhoDoFilho";
+    primeiroFilhoDoFilho.appendChild(primeiroFilhoDoFilhoDoFilho);
+    document.getElementById("primeiroFilhoDoFilhoDoFilho").innerText = "EU ja to endoidando.";
+
+    /* 4. A partir desse filho criado, acesse `terceiroFilho` */
+    const terceiroFilho = primeiroFilhoDoFilhoDoFilho.parentElement.parentElement.nextElementSibling;
+    console.log(terceiroFilho);
+
+    /* Remova todos os elementos filhos de paiDoPai exceto pai , elementoOndeVoceEsta e primeiroFilhoDoFilho  */
+    const matandoOsFilhos = document.getElementById("pai");
+      for (let i = matandoOsFilhos.childNodes.length - 1; i >= 0 ; i -= 1){
+        const filhos = matandoOsFilhos.childNodes[i];
+        if (filhos.id !== "elementoOndeVoceEsta") {
+          filhos.remove();
+        }
+      }
+      
+  </script>
+</body>
 </html>
