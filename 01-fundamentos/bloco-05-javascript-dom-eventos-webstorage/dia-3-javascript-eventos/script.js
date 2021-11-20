@@ -162,7 +162,7 @@ function adicionaLegenda(cor) {
   legenda.style.backgroundColor = cor;
   divTarefa.appendChild(legenda);
 }
-adicionaLegenda("blue");
+adicionaLegenda("red");
 
 // Exercicio 9
 
